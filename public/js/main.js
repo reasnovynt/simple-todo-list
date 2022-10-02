@@ -1,25 +1,35 @@
-document.querySelector('#push').onclick = function(){
-    if(document.querySelector('#newTask input').value.length == 0){
-        alert("Kindly Enter Task Name!!!!")
-    }
+const newTask = document.querySelector('#newTask input')
 
-    else{
-        document.querySelector('#tasks').innerHTML += `
-            <div class="task">
-                <span id="taskname">
-                    ${document.querySelector('#newTask input').value}
-                </span>
-                <button class="delete">
-                    <i class="far fa-trash-alt"></i>
-                </button>
-            </div>
-        `;
+document.querySelector('#push').addEventListener('click', addTask);
+newTask.addEventListener('keyup', function(e) {
+	if (e.code == 'Enter') addTask();
+});
 
-        var current_tasks = document.querySelectorAll(".delete");
-        for(var i=0; i<current_tasks.length; i++) {
-            current_tasks[i].onclick = function() {
-                this.parentNode.remove();
-            }
-        }
-    }
+
+function addTask() {
+	if(newTask.value.length == 0){
+		alert("Kindly Enter Task Name!!!!")
+	}
+
+	else{
+			document.querySelector('#tasks').innerHTML += `
+					<div class="task">
+							<span id="taskname">
+									${ newTask.value }
+							</span>
+							<button class="delete">
+									<i class="far fa-trash-alt"></i>
+							</button>
+					</div>
+			`;
+
+			newTask.value = ""
+
+			var current_tasks = document.querySelectorAll(".delete");
+			for(var i=0; i<current_tasks.length; i++) {
+					current_tasks[i].onclick = function() {
+							this.parentNode.remove();
+					}
+			}
+	}   
 }
