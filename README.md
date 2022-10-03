@@ -1,7 +1,7 @@
 # Simple Todo List | Mini Project
 **Preview:** [Simple Todo List](https://reasnovynt.github.io/simple-todo-list)
 
-![Simple Todo List Preview](/public/src/img/preview.png "Simple Todo List Preview")
+![Simple Todo List Preview](/src/img/preview.png "Simple Todo List Preview")
 
 ## Description:
 Simple Todo List is a mini project created using HTML, CSS and JavaScript languages.
